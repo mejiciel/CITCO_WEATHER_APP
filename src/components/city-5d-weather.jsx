@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import * as MY_CONSTANTS from './constants';
+import * as MY_CONSTANTS from '../common/constants';
 import BootstrapTable from 'react-bootstrap-table-next';
-import * as weatherSvc from './weather-service';
-import * as utils from './utils';
+import * as weatherSvc from '../common/weather-service';
+import * as utils from '../common/utils';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import "bootstrap/dist/css/bootstrap.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import './App.css';
+import '../App.css';
 
 const columns=[
     {

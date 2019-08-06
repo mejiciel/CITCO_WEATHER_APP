@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import * as MY_CONSTANTS from './constants';
-import './App.css';
+import * as MY_CONSTANTS from '../common/constants';
+import '../App.css';
 
 export default class WeatherDropdown extends React.Component {
     citylist;

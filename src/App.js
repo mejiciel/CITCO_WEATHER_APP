@@ -1,12 +1,14 @@
 import React,{Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import WeatherDropdown from './my-dropdown';
+import WeatherDropdown from './components/my-dropdown';
 import { tsConstructorType } from '@babel/types';
-import City5dWeather from './city-5d-weather';
-import CityWeather from './city-weather';
+import City5dWeather from './components/city-5d-weather';
+import CityWeather from './components/city-weather';
 import ReactDOMServer from 'react-dom/server';
+import {createStore} from 'redux';
 
+const store=createStore();
 class App extends React.Component{
 
 

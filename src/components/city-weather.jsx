@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import * as MY_CONSTANTS from './constants';
-import * as WeatherSvc from './weather-service';
-import './App.css';
+import * as MY_CONSTANTS from '../common/constants';
+import * as WeatherSvc from '../common/weather-service';
+import '../App.css';
 
 export default class CityWeather extends React.Component{
     abortCtrl;
