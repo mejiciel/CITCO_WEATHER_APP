@@ -10,13 +10,19 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-body{
+  min-height:80vh;
+  margin-left:20%;
+  min-width:50%;
 }
 
 .App-link {
@@ -31,3 +37,72 @@
     transform: rotate(360deg);
   }
 }
+
+.weather-dropdown{
+  display:block;
+  margin-bottom: 30px;
+  text-align: left;
+
+  
+}
+.city-weather{
+  float:left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #282c34;
+  /*max-height:10vh;*/
+  width:40vh; 
+  border-radius: 10px;
+  
+  
+}
+.city-weather .header, .city-5d-weather .header{
+  background: #cccccc;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #282c34;
+  padding:10px;
+  border-radius: 10px 10px 0 0;
+  text-align: left;
+  
+}
+
+.city-weather .body{
+  display:block;
+}
+
+
+.city-weather .city-status{
+  text-align: left;
+  list-style-type:none;
+  float:left;
+  padding-left:10px;
+}
+
+.city-weather .forcast-button{
+  position: relative;
+  top:10vh;
+}
+
+.city-5d-weather{
+  margin-left: 30px;
+  float:left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #282c34;
+  /*max-height:10vh;*/
+  width:40%; 
+  border-radius: 10px;
+  
+}
+
+.city-5d-weather .body{
+  padding:30px;
+}
+
+.city-5d-weather .forcast-close-btn{
+  position: relative;
+  left:180px;
+}
+
+
