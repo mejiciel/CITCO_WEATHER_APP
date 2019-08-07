@@ -4,13 +4,13 @@ import * as WeatherSvc from '../common/weather-service';
 import '../App.css';
 
 export default class CityWeather extends React.Component{
-    abortCtrl;
+    
     constructor(props){
         super(props);
         this.state={cityWeather:undefined};
         this.cityWeather=undefined;
         this.on5dayClick=this.on5dayClick.bind(this);
-        this.abortCtrl=new AbortController();
+        //this.abortCtrl=new AbortController();
         //this.updateCityWeather(props.cityId);    
         //console.log('Constuctor City:',this.props.cityId);
     }
@@ -53,7 +53,7 @@ export default class CityWeather extends React.Component{
                                 this.setState({cityWeather:json})
                                 this.cityWeather=json;
                             }
-                        ,this.abortCtrl.signal);            
+                        );            
         }
     }
 

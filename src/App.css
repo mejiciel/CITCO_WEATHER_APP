@@ -20,7 +20,7 @@
 }
 
 .App-body{
-  min-height:80vh;
+  min-height:90vh;
   margin-left:20%;
   min-width:50%;
 }
@@ -51,7 +51,7 @@
   border-style: solid;
   border-color: #282c34;
   /*max-height:10vh;*/
-  width:40vh; 
+  width:30%; 
   border-radius: 10px;
   
   
@@ -68,7 +68,8 @@
 }
 
 .city-weather .body{
-  display:block;
+  /* display:block; */
+  position: relative;
 }
 
 
@@ -79,9 +80,11 @@
   padding-left:10px;
 }
 
-.city-weather .forcast-button{
-  position: relative;
-  top:10vh;
+.city-weather .body .forcast-button{
+  position: absolute;
+  bottom: -100px;
+  float:right;
+  margin-right:10px;
 }
 
 .city-5d-weather{
@@ -91,18 +94,19 @@
   border-style: solid;
   border-color: #282c34;
   /*max-height:10vh;*/
-  width:40%; 
+  width:60%; 
   border-radius: 10px;
   
 }
 
 .city-5d-weather .body{
   padding:30px;
+  text-align: left;
 }
 
 .city-5d-weather .forcast-close-btn{
   position: relative;
-  left:180px;
+  float:right
 }
 
 

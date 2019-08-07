@@ -7,8 +7,11 @@ import City5dWeather from './components/city-5d-weather';
 import CityWeather from './components/city-weather';
 import ReactDOMServer from 'react-dom/server';
 import {createStore} from 'redux';
+import weatherReducer from './reducers/weather-reducer';
+import {ACTION_TYPE,currentWeatherAction,forcastWeatherAction,closeForcastAction} from './actions';
 
-const store=createStore();
+const store=createStore(weatherReducer);
+
 class App extends React.Component{
 
 
@@ -17,24 +20,24 @@ class App extends React.Component{
     super(props)
     this.state={selectedCity:0,show5day:false};
     this.onCitySelection=this.onCitySelection.bind(this);
+    store.subscribe(this.updateRender.bind(this));
+  }
+  updateRender(){
+    //console.log('update');
+    this.forceUpdate();
   }
   onCitySelection(city) {
-    this.setState({selectedCity:city});
+    //this.setState({selectedCity:city});
+    store.dispatch(currentWeatherAction(city));
   }
-  showCity(){
-    
-    return this.state.selectedCity && this.state.selectedCity>0;
-  }
-  show5day(){
-    return this.showCity() && this.state.show5day;
+  on5dayClick(cityId){
+    store.dispatch(forcastWeatherAction(cityId));
   }
 
-  on5dayClick(cityId){
-    this.setState({show5day:true});
-  }
+  
 
   render() {
-    
+    let reduxState=store.getState();
     let t = (
 
       <div className="App">
@@ -43,8 +46,8 @@ class App extends React.Component{
         </header>
         <div className='App-body'>
           <WeatherDropdown onChange={this.onCitySelection} className="weather-dropdown"></WeatherDropdown>
-          {this.showCity() ? <CityWeather cityId={this.state.selectedCity} on5dayClick={this.on5dayClick.bind(this)} class="city-weather"></CityWeather>:null}
-          {this.show5day() ? <City5dWeather cityId={this.state.selectedCity} class="city-5d-weather"></City5dWeather>:null}
+          {reduxState.showCurWeather ? <CityWeather cityId={reduxState.cityId} on5dayClick={this.on5dayClick.bind(this)} class="city-weather"></CityWeather>:null}
+          {reduxState.showForcast? <City5dWeather cityId={reduxState.cityId} store={store} class="city-5d-weather"></City5dWeather>:null}
         </div>
       </div>
     );

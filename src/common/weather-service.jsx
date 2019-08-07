@@ -1,5 +1,5 @@
-export function fetchJson(url,callback,abortSignal){
-    return fetch(url,{abortSignal})
+export function fetchJson(url,callback){
+    return fetch(url)
     .then(results=>results.json())
     .then(json=>callback(json));
 }

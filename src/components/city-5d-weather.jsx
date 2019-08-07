@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import '../App.css';
-
+import {closeForcastAction} from '../actions'
 const columns=[
     {
        dataField:'dt',
@@ -63,7 +63,7 @@ export default class City5dWeather extends React.Component{
     }
 
     close(){
-        this.setState({forcast:undefined});
+        this.props.store.dispatch(closeForcastAction());
     }
 
     
